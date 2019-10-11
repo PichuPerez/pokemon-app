@@ -8,7 +8,7 @@ const PokemonDetail = ({ pokemon }) =>{
         let evolutions
         if(pokemon.evolutions){
         evolutions =  pokemon.evolutions.map(evolution => <Pokecard pokemon={evolution}/>)
-    }
+        }
     return (
         <div className="container mt-5">
             <div className="row mt-2">
