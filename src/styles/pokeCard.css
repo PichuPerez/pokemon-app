@@ -1,0 +1,11 @@
+.pokeCard{
+    border: solid 1px #9f9f9f;
+    width: 300px;
+    padding: 10px;
+    box-shadow: 7px 10px 12px -5px rgba(0,0,0,0.56);
+    background-color: #fcf5fb;
+    border-radius: 5px;
+}
+.pokeCard:hover {
+    transform: scale(1.05)
+}
