@@ -33,9 +33,8 @@ export default class Pokemon extends Component {
         return (
             <Query query={GET_POKEMON_DETAIL} variables={{ id: match.params.id }}>
                 {({loading, error, data})=> {
-                    if (loading) return null
+                    if (loading) return <h1 className="container mt-5">Loading Pokemon...</h1>
                     if (error) return `Error! ${error}`
-                    console.log(data)
                     return <PokemonDetail pokemon={data.pokemon} />
                 }}
             </Query>

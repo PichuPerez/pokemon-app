@@ -9,7 +9,7 @@ const Pokecard = ({ pokemon }) =>{
         return (
             <div className="pokeCard container mt-5">
                 <div className="row justify-content-center">
-                    <h4 className="card-title">--{pokemon.name}--</h4>
+                    <h4 className="card-title">-- {pokemon.name} --</h4>
                 </div>
                 <div>
                     <img src={pokemon.image} className="img-thumbnail no-border"></img>
