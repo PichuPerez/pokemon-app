@@ -5,7 +5,7 @@ import { Query } from 'react-apollo'
 import Pokedeck from '../components/Pokedeck'
 
 const GET_ALL_POKEMONS = gql`
-  query pokemons($first: Int = 20) {
+  query pokemons($first: Int = 12) {
     pokemons(first: $first) {
         id
         number
@@ -17,8 +17,7 @@ const GET_ALL_POKEMONS = gql`
   }
 }`
 
-export default class Pokemons extends Component {
-    render() {
+function Pokemons () {
         return (
             <Query query={GET_ALL_POKEMONS}>
                 {({loading, error, data})=> {
@@ -28,5 +27,6 @@ export default class Pokemons extends Component {
                 }}
             </Query>
         )
-    }
 }
+
+export default Pokemons

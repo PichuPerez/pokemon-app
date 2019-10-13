@@ -26,18 +26,19 @@ const GET_POKEMON_DETAIL = gql`
   }
 }`
 
-export default class Pokemon extends Component {
+class Pokemon extends Component {
     render() {
-        const { match } = this.props
-        console.log(match)
+        const {match} = this.props
         return (
-            <Query query={GET_POKEMON_DETAIL} variables={{ id: match.params.id }}>
-                {({loading, error, data})=> {
+            <Query query={GET_POKEMON_DETAIL} variables={{id: match.params.id}}>
+                {({loading, error, data}) => {
                     if (loading) return <h1 className="container mt-5">Loading Pokemon...</h1>
                     if (error) return `Error! ${error}`
-                    return <PokemonDetail pokemon={data.pokemon} />
+                    return <PokemonDetail pokemon={data.pokemon}/>
                 }}
             </Query>
         )
     }
 }
+
+export default Pokemon

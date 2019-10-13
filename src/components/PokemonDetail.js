@@ -1,7 +1,7 @@
 import React from 'react'
 import Pokecard from "./Pokecard";
 
-const PokemonDetail = ({ pokemon }) =>{
+function PokemonDetail ({ pokemon }) {
         let types = pokemon.types.map(type =>{
             return( <strong className="mr-2">{type}</strong> )
         })
@@ -10,7 +10,7 @@ const PokemonDetail = ({ pokemon }) =>{
             evolutions =  pokemon.evolutions.map(evolution => <Pokecard pokemon={evolution}/>)
         }
     return (
-        <div className="container mt-5">
+        <div className="container mt-5 justify-content-center">
             <div className="row mt-2">
                 <div className="col-md-5">
                     <img src={pokemon.image} className="img-thumbnail"></img>
@@ -28,8 +28,12 @@ const PokemonDetail = ({ pokemon }) =>{
                     </ul>
                 </div>
             </div>
-            <div className="row">
-                {evolutions}
+            <hr></hr>
+            <div className="row mt-5">
+                <h3>Evolutions</h3>
+            </div>
+            <div className="row mt-2">
+                {pokemon.evolutions ? evolutions : <p>This pokemon has no evolutions.</p>}
             </div>
         </div>
     )
